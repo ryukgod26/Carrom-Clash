@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dujhrjygn7f4l"]
+
+[ext_resource type="Texture2D" uid="uid://bd8hdmmctagqt" path="res://assets/Aseprite/Coin/test_coin.png" id="1_2qo34"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgi06"]
+radius = 22.022715
+
+[node name="Coin" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2qo34")
+offset = Vector2(0, -22)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("CircleShape2D_jgi06")

@@ -1,3 +1,77 @@
-[gd_scene format=3 uid="uid://5s730stoedup"]
+[gd_scene load_steps=7 format=3 uid="uid://5s730stoedup"]
+
+[ext_resource type="Texture2D" uid="uid://c71uygcgpf74v" path="res://assets/Aseprite/Board/test_board.png" id="1_tnbny"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tnbny"]
+radius = 19.235384
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tnbny"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2wvcj"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uh3b8"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_shhme"]
 
 [node name="Board" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tnbny")
+offset = Vector2(512, 512)
+
+[node name="Pockets" type="Node2D" parent="."]
+
+[node name="TopLeft" type="Area2D" parent="Pockets"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pockets/TopLeft"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_tnbny")
+
+[node name="TopRight" type="Area2D" parent="Pockets"]
+position = Vector2(985, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pockets/TopRight"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_tnbny")
+
+[node name="BottomRight" type="Area2D" parent="Pockets"]
+position = Vector2(989, 985)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pockets/BottomRight"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_tnbny")
+
+[node name="BottomLeft" type="Area2D" parent="Pockets"]
+position = Vector2(-5, 984)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pockets/BottomLeft"]
+position = Vector2(20, 20)
+shape = SubResource("CircleShape2D_tnbny")
+
+[node name="BoardBoundries" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="BoardBoundries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardBoundries/Top"]
+position = Vector2(403, -2)
+shape = SubResource("WorldBoundaryShape2D_tnbny")
+
+[node name="Right" type="StaticBody2D" parent="BoardBoundries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardBoundries/Right"]
+position = Vector2(1024, 512)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_2wvcj")
+
+[node name="Left" type="StaticBody2D" parent="BoardBoundries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardBoundries/Left"]
+position = Vector2(0, 512)
+rotation = 1.5707964
+shape = SubResource("WorldBoundaryShape2D_uh3b8")
+
+[node name="Bottom" type="StaticBody2D" parent="BoardBoundries"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardBoundries/Bottom"]
+position = Vector2(512, 1024)
+shape = SubResource("WorldBoundaryShape2D_shhme")

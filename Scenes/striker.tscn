@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ceb1nhm1apmtw"]
+
+[ext_resource type="Script" uid="uid://cr242p04ntuv3" path="res://Scripts/Striker/striker.gd" id="1_algrq"]
+[ext_resource type="Texture2D" uid="uid://bayu5dpuqwdq0" path="res://assets/Aseprite/Striker/test_striker.png" id="2_axd0p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_axd0p"]
+radius = 29.0
+
+[node name="Striker" type="CharacterBody2D"]
+script = ExtResource("1_algrq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_axd0p")
+offset = Vector2(0, -29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -29)
+shape = SubResource("CircleShape2D_axd0p")
