@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://5s730stoedup"]
+[gd_scene load_steps=8 format=3 uid="uid://5s730stoedup"]
 
 [ext_resource type="Texture2D" uid="uid://c71uygcgpf74v" path="res://assets/Aseprite/Board/test_board.png" id="1_tnbny"]
+[ext_resource type="PackedScene" uid="uid://ceb1nhm1apmtw" path="res://Scenes/striker.tscn" id="2_2wvcj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tnbny"]
 radius = 19.235384
@@ -75,3 +76,10 @@ shape = SubResource("WorldBoundaryShape2D_uh3b8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoardBoundries/Bottom"]
 position = Vector2(512, 1024)
 shape = SubResource("WorldBoundaryShape2D_shhme")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Striker" type="Node2D" parent="."]
+
+[node name="Striker" parent="Striker" instance=ExtResource("2_2wvcj")]
+position = Vector2(360, 392)

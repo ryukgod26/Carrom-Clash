@@ -11,8 +11,14 @@ config_version=5
 [application]
 
 config/name="Carrom Clash"
+run/main_scene="uid://5s730stoedup"
 config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [editor_plugins]
 
